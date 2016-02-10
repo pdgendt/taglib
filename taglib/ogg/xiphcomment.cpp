@@ -80,6 +80,11 @@ String Ogg::XiphComment::album() const
   return d->fieldListMap["ALBUM"].toString();
 }
 
+String Ogg::XiphComment::albumArtist() const
+{
+  return String::null;
+}
+
 String Ogg::XiphComment::comment() const
 {
   if(!d->fieldListMap["DESCRIPTION"].isEmpty()) {
@@ -133,6 +138,10 @@ void Ogg::XiphComment::setArtist(const String &s)
 void Ogg::XiphComment::setAlbum(const String &s)
 {
   addField("ALBUM", s);
+}
+
+void Ogg::XiphComment::setAlbumArtist(const String &s)
+{
 }
 
 void Ogg::XiphComment::setComment(const String &s)

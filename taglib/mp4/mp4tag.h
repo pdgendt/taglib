@@ -56,6 +56,7 @@ namespace TagLib {
         String title() const;
         String artist() const;
         String album() const;
+        String albumArtist() const;
         String comment() const;
         String genre() const;
         uint year() const;
@@ -64,6 +65,7 @@ namespace TagLib {
         void setTitle(const String &value);
         void setArtist(const String &value);
         void setAlbum(const String &value);
+        void setAlbumArtist(const String &value);
         void setComment(const String &value);
         void setGenre(const String &value);
         void setYear(uint value);

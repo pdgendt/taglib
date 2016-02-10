@@ -63,6 +63,11 @@ namespace TagLib {
       String album() const;
 
       /*!
+       * Not supported by module files.  Therefore always returns String::null.
+       */
+      String albumArtist() const;
+
+      /*!
        * Returns the track comment derived from the instrument/sample/pattern
        * names; if no comment is present in the tag String::null will be
        * returned.
@@ -112,6 +117,11 @@ namespace TagLib {
        * Not supported by module files and therefore ignored.
        */
       void setAlbum(const String &album);
+
+      /*!
+       * Not supported by module files and therefore ignored.
+       */
+      void setAlbumArtist(const String &album);
 
       /*!
        * Sets the comment to \a comment.  If \a comment is String::null then

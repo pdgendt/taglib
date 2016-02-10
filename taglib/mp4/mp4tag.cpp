@@ -689,6 +689,14 @@ MP4::Tag::album() const
 }
 
 String
+MP4::Tag::albumArtist() const
+{
+  if(d->items.contains("aART"))
+    return d->items["aART"].toStringList().toString(", ");
+  return String::null;
+}
+
+String
 MP4::Tag::comment() const
 {
   if(d->items.contains("\251cmt"))

@@ -176,6 +176,14 @@ TAGLIB_C_EXPORT char *taglib_tag_artist(const TagLib_Tag *tag);
 TAGLIB_C_EXPORT char *taglib_tag_album(const TagLib_Tag *tag);
 
 /*!
+ * Returns a string with this tag's album artist name.
+ *
+ * \note By default this string should be UTF8 encoded and its memory should be
+ * freed using taglib_tag_free_strings().
+ */
+TAGLIB_C_EXPORT char *taglib_tag_album_artist(const TagLib_Tag *tag);
+
+/*!
  * Returns a string with this tag's comment.
  *
  * \note By default this string should be UTF8 encoded and its memory should be
@@ -221,6 +229,13 @@ TAGLIB_C_EXPORT void taglib_tag_set_artist(TagLib_Tag *tag, const char *artist);
  * \note By default this string should be UTF8 encoded.
  */
 TAGLIB_C_EXPORT void taglib_tag_set_album(TagLib_Tag *tag, const char *album);
+
+/*!
+ * Sets the tag's album artist.
+ *
+ * \note By default this string should be UTF8 encoded.
+ */
+TAGLIB_C_EXPORT void taglib_tag_set_album_artist(TagLib_Tag *tag, const char *album_artist);
 
 /*!
  * Sets the tag's comment.

@@ -66,6 +66,12 @@ namespace TagLib {
       virtual String album() const;
 
       /*!
+       * Returns the album name; if no album name is present in the tag
+       * String::null will be returned.
+       */
+      virtual String albumArtist() const;
+
+      /*!
        * Returns the track comment.
        */
       virtual String comment() const;
@@ -113,6 +119,12 @@ namespace TagLib {
        * cleared.
        */
       virtual void setAlbum(const String &s);
+
+      /*!
+       * Sets the album to \a s.  If \a s is String::null then this value will be
+       * cleared.
+       */
+      virtual void setAlbumArtist(const String &s);
 
       /*!
        * Sets the comment to \a s.

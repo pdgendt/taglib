@@ -119,6 +119,11 @@ String RIFF::Info::Tag::album() const
   return fieldText("IPRD");
 }
 
+String RIFF::Info::Tag::albumArtist() const
+{
+  return String::null;
+}
+
 String RIFF::Info::Tag::comment() const
 {
   return fieldText("ICMT");
@@ -152,6 +157,10 @@ void RIFF::Info::Tag::setArtist(const String &s)
 void RIFF::Info::Tag::setAlbum(const String &s)
 {
   setFieldText("IPRD", s);
+}
+
+void RIFF::Info::Tag::setAlbumArtist(const String &s)
+{
 }
 
 void RIFF::Info::Tag::setComment(const String &s)

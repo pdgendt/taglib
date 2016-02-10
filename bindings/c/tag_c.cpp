@@ -156,6 +156,15 @@ char *taglib_tag_album(const TagLib_Tag *tag)
   return s;
 }
 
+char *taglib_tag_album_artist(const TagLib_Tag *tag)
+{
+  const Tag *t = reinterpret_cast<const Tag *>(tag);
+  char *s = ::strdup(t->albumArtist().toCString(unicodeStrings));
+  if(stringManagementEnabled)
+    strings.append(s);
+  return s;
+}
+
 char *taglib_tag_comment(const TagLib_Tag *tag)
 {
   const Tag *t = reinterpret_cast<const Tag *>(tag);
@@ -202,6 +211,12 @@ void taglib_tag_set_album(TagLib_Tag *tag, const char *album)
 {
   Tag *t = reinterpret_cast<Tag *>(tag);
   t->setAlbum(String(album, unicodeStrings ? String::UTF8 : String::Latin1));
+}
+
+void taglib_tag_set_album_artist(TagLib_Tag *tag, const char *album_artist)
+{
+  Tag *t = reinterpret_cast<Tag *>(tag);
+  t->setAlbumArtist(String(album_artist, unicodeStrings ? String::UTF8 : String::Latin1));
 }
 
 void taglib_tag_set_comment(TagLib_Tag *tag, const char *comment)
